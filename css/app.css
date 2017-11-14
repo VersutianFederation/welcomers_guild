@@ -1,0 +1,46 @@
+header {
+    background-image: linear-gradient(141deg,rgba(158, 0, 55, 0.88) 0,rgba(0, 129, 209, 0.63) 71%,rgba(0, 235, 181, 0.67) 100%), url('../img/versutian-blurred.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    margin-bottom: 0 !important
+}
+
+#header-toggle {
+    color: #292b2c;
+    border-color: #fff;
+    margin-bottom: 1.75rem;
+    border-radius: 0
+}
+
+#header-toggle:hover {
+    color: #fff;
+    background-color: #292b2c;
+    border-color: #292b2c
+}
+
+.thick {
+    font-weight: 600
+}
+
+#navbar-cont {
+    display: block
+}
+
+.navbar-nav {
+    display: inline-block;
+    
+}
+
+.navbarDropdownLinkSpan {
+    font-size: 20px
+}
+
+#navbarDropdownMenuLink {
+    color: rgba(0, 0, 0, 1)
+}
+
+.navbar-brand {
+    margin-right: 0
+}
