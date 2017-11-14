@@ -3,21 +3,7 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;
-    margin-bottom: 0 !important
-}
-
-#header-toggle {
-    color: #292b2c;
-    border-color: #fff;
-    margin-bottom: 1.75rem;
-    border-radius: 0
-}
-
-#header-toggle:hover {
-    color: #fff;
-    background-color: #292b2c;
-    border-color: #292b2c
+    color: #fff
 }
 
 .thick {
