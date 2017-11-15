@@ -16,7 +16,7 @@ header {
 
 .navbar-nav {
     display: inline-block;
-    
+
 }
 
 .navbarDropdownLinkSpan {
@@ -29,4 +29,9 @@ header {
 
 .navbar-brand {
     margin-right: 0
+}
+
+.flag {
+  max-height: 39px;
+  max-width: 60px
 }
