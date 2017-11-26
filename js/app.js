@@ -10,6 +10,12 @@ function app() {
     };
     firebase.initializeApp(config);
 
+    var token = document.cookie.replace(/(?:(?:^|.*;\s*)__Secure-token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+    firebase.auth().signInWithCustomToken(token).catch(function(error) {
+        console.log(error.message);
+    });
+
     var content = document.getElementById('content');
     var nation;
 
