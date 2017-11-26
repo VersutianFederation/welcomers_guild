@@ -48,30 +48,41 @@
     </div>
   </header>
 
+  <section id="subnav" class="container">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Leaderboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Inventory</a>
+      </li>
+    </ul>
+  </section>
+
   <section id="content" class="container">
   </section>
 
   <br><br>
 
-    <!-- Lootbox modal -->
-    <div class="modal fade" id="lootboxModal" tabindex="-1" role="dialog" aria-labelledby="lootboxModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="lootboxModalLabel">Unboxing your loot...</h5>
-            </div>
-            <div class="modal-body" id="close-unbox">
-                <img src="img/crate.png">
-                <p>You received...</p>
-                <p id="loot-tier"></p>
-                <p class="lead" id="loot-item"></p>
-            </div>
-            <div class="modal-footer" id="close-box" style="display: none">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-button">Close</button>
-            </div>
-          </div>
+  <!-- Lootbox modal -->
+  <div class="modal fade" id="lootboxModal" tabindex="-1" role="dialog" aria-labelledby="lootboxModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="lootboxModalLabel">Unboxing your loot...</h5>
+        </div>
+        <div class="modal-body" id="close-unbox">
+            <img src="img/crate.png">
+            <p>You received...</p>
+            <p id="loot-tier"></p>
+            <p class="lead" id="loot-item"></p>
+        </div>
+        <div class="modal-footer" id="close-box" style="display: none">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-button">Close</button>
         </div>
       </div>
+    </div>
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>

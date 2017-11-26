@@ -42,3 +42,7 @@ header {
     margin: 1rem;
     border: 1px solid #37474F;
 }
+
+#subnav {
+    padding-bottom: 1rem
+}
