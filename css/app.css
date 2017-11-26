@@ -35,3 +35,10 @@ header {
   max-height: 39px;
   max-width: 60px
 }
+
+.box-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    border: 1px solid #37474F;
+}
