@@ -150,7 +150,7 @@ function app() {
     console.log(token);
     if (token) {
         content.innerHTML = '';
-        nation = token.payloadPP.user_id;
+        nation = token.payloadObj.user_id;
         request('https://api.versutian.site/boxes?nation=' + nation, function(boxes) {
             fillInventory(boxes);
         });
