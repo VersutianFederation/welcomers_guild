@@ -10,12 +10,6 @@ function app() {
     };
     firebase.initializeApp(config);
 
-    var token = document.cookie.replace(/(?:(?:^|.*;\s*)__Secure-token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-
-    firebase.auth().signInWithCustomToken(token).catch(function(error) {
-        console.log(error.message);
-    });
-
     var content = document.getElementById('content');
     var nation;
 
@@ -150,18 +144,19 @@ function app() {
         }
     }
 
-    firebase.auth().onAuthStateChanged(function (user) {
-        // are we logged in?
-        if (user) {
-            content.innerHTML = '';
-            nation = user.uid;
-            request('https://api.versutian.site/boxes?nation=' + nation, function(boxes) {
-                fillInventory(boxes);
-            });
-        } else {
-            showLoginForm();
-        }
-    });
+    // are we logged in?
+    var token = document.cookie.replace(/(?:(?:^|.*;\s*)__Secure-token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    token = KJUR.jws.JWS.parse(token);
+    console.log(token);
+    if (token) {
+        content.innerHTML = '';
+        nation = token.payloadPP.user_id;
+        request('https://api.versutian.site/boxes?nation=' + nation, function(boxes) {
+            fillInventory(boxes);
+        });
+    } else {
+        showLoginForm();
+    }
 }
 
 // load the app when page has loaded
