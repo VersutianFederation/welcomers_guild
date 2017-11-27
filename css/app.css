@@ -27,6 +27,16 @@ header {
     background-color: #BCAAA4
 }
 
+.purple_background {
+    background-color: #6A1B9A;
+    color: #fff
+}
+
+.purple_background:hover {
+    background-color: #6A1B9A;
+    color: #fff
+}
+
 .navbarDropdownLinkSpan {
     font-size: 20px
 }
