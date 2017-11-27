@@ -45,6 +45,7 @@ function app() {
 
     $('#lootboxModal').on('hide.bs.modal', function (e) {
         document.getElementById("close-unbox").style.display = 'none';
+        document.getElementById("close-box").style.display = 'none';
         var tierEl = document.getElementById('loot-tier').innerText = "";
         var itemEl = document.getElementById('loot-item').innerText = "";
         request('https://api.versutian.site/boxes?nation=' + nation, function(boxes) {
