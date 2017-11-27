@@ -138,7 +138,7 @@ function app() {
                         tierEl.innerText = tierName;
                         var itemEl = document.getElementById('loot-item');
                         itemEl.style.color = tierColor;
-                        itemEl.innerText = (lootData.special ? '<span style="color: #8650AC">Special</span> ' : '') + lootData.item;
+                        itemEl.innerHTML = (lootData.special ? '<span style="color: #8650AC">Special</span> ' : '') + lootData.item;
                         document.getElementById('close-box').style.display = "block";
                     });
                 });
