@@ -101,51 +101,53 @@ function app() {
                     $('#lootboxModal').modal('show');
                     unboxSound.play();
                     request('https://api.versutian.site/loot?nation=' + nation, function(loot) {
-                        var lootData = JSON.parse(loot);
-                        document.getElementById("close-unbox").style.display = 'block';
-                        var tierName;
-                        var tierColor;
-                        var rewardSound;
-                        unboxSound.stop();
-                        switch (lootData.tier) {
-                            case 1:
-                                tierName = "Common";
-                                tierColor = "#B0C3D9";
-                                commonDrop.play();
-                                break;
-                            case 2:
-                                tierName = "Uncommon";
-                                tierColor = "#5E98D9";
-                                uncommonDrop.play();
-                                break;
-                            case 3:
-                                tierName = "Rare";
-                                tierColor = "#4B69FF";
-                                rareDrop.play();
-                                break;
-                            case 4:
-                                tierName = "Elite";
-                                tierColor = "#8847FF";
-                                eliteDrop.play();
-                                break;
-                            case 5:
-                                tierName = "Ambassador Select";
-                                tierColor = "#D32CE6";
-                                ambassadorDrop.play();
-                                break;
-                            default:
-                                break;
-                        }
-                        var crateImg = document.getElementById('crate-img');
-                        crateImg.style.backgroundColor = tierColor;
-                        crateImg.style.boxShadow = "0 0 " + lootData.tier * 2 + "px " + tierColor;
-                        var tierEl = document.getElementById('loot-tier');
-                        tierEl.style.color = tierColor;
-                        tierEl.innerText = tierName;
-                        var itemEl = document.getElementById('loot-item');
-                        itemEl.style.color = tierColor;
-                        itemEl.innerHTML = (lootData.special ? '<span style="color: #8650AC">Special</span> ' : '') + lootData.item;
-                        document.getElementById('close-box').style.display = "block";
+                        unboxSound.once('end', function() {
+                            var lootData = JSON.parse(loot);
+                            document.getElementById("close-unbox").style.display = 'block';
+                            var tierName;
+                            var tierColor;
+                            var rewardSound;
+                            unboxSound.stop();
+                            switch (lootData.tier) {
+                                case 1:
+                                    tierName = "Common";
+                                    tierColor = "#B0C3D9";
+                                    commonDrop.play();
+                                    break;
+                                case 2:
+                                    tierName = "Uncommon";
+                                    tierColor = "#5E98D9";
+                                    uncommonDrop.play();
+                                    break;
+                                case 3:
+                                    tierName = "Rare";
+                                    tierColor = "#4B69FF";
+                                    rareDrop.play();
+                                    break;
+                                case 4:
+                                    tierName = "Elite";
+                                    tierColor = "#8847FF";
+                                    eliteDrop.play();
+                                    break;
+                                case 5:
+                                    tierName = "Ambassador Select";
+                                    tierColor = "#D32CE6";
+                                    ambassadorDrop.play();
+                                    break;
+                                default:
+                                    break;
+                            }
+                            var crateImg = document.getElementById('crate-img');
+                            crateImg.style.backgroundColor = tierColor;
+                            crateImg.style.boxShadow = "0 0 " + lootData.tier * 2 + "px " + tierColor;
+                            var tierEl = document.getElementById('loot-tier');
+                            tierEl.style.color = tierColor;
+                            tierEl.innerText = tierName;
+                            var itemEl = document.getElementById('loot-item');
+                            itemEl.style.color = tierColor;
+                            itemEl.innerHTML = (lootData.special ? '<span style="color: #8650AC">Special</span> ' : '') + lootData.item;
+                            document.getElementById('close-box').style.display = "block";
+                        });                        
                     });
                 });
                 button.innerText = 'Open lootbox';
