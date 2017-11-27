@@ -56,6 +56,10 @@ function app() {
         });
     });
 
+    var unboxSound = new Howl({
+        src: ['sound/unbox.mp3']
+    });
+
     var commonDrop = new Howl({
         src: ['sound/common_drop.mp3']
     });
@@ -95,12 +99,14 @@ function app() {
                 button.setAttribute("class", "btn btn-primary");
                 button.addEventListener('click', function() {
                     $('#lootboxModal').modal('show');
+                    unboxSound.play();
                     request('https://api.versutian.site/loot?nation=' + nation, function(loot) {
                         var lootData = JSON.parse(loot);
                         document.getElementById("close-unbox").style.display = 'block';
                         var tierName;
                         var tierColor;
                         var rewardSound;
+                        unboxSound.stop();
                         switch (lootData.tier) {
                             case 1:
                                 tierName = "Common";
