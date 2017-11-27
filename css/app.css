@@ -53,6 +53,18 @@ header {
     min-height: 20vh;
 }
 
+.slate_background {
+    background-image: linear-gradient(141deg,rgb(38,50,56) 0,rgb(84,110,122) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.slate_background:hover {
+    color: #fff;
+}
+
 .firey_passion {
     background-image: linear-gradient(141deg,rgba(236, 64, 122, 0.88) 0,rgba(194,24,91, 0.67) 100%), url('../img/firey_passion.gif');
     background-size: cover;
