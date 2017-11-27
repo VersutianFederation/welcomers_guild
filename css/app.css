@@ -29,12 +29,12 @@ header {
 
 .purple_background {
     background-color: #6A1B9A;
-    color: #fff
+    color: #fff !important
 }
 
 .purple_background:hover {
     background-color: #6A1B9A;
-    color: #fff
+    color: #fff !important
 }
 
 .navbarDropdownLinkSpan {
@@ -68,11 +68,11 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;
+    color: #fff !important;
 }
 
 .slate_background:hover {
-    color: #fff;
+    color: #fff !important;
 }
 
 .firey_passion {
@@ -80,11 +80,11 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;
+    color: #fff !important;
 }
 
 .firey_passion:hover {
-    color: #fff
+    color: #fff !important
 }
 
 .box-item {
