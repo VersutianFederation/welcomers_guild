@@ -71,11 +71,13 @@
         <div class="modal-header">
           <h5 class="modal-title" id="lootboxModalLabel">Unboxing your loot...</h5>
         </div>
-        <div class="modal-body" id="close-unbox">
+        <div class="modal-body">
             <img class="img-fluid" src="img/crate.png">
-            <p>You received...</p>
-            <p id="loot-tier"></p>
-            <p class="lead" id="loot-item"></p>
+            <div id="close-unbox" style="display: none">
+              <p>You received...</p>
+              <p id="loot-tier"></p>
+              <p class="lead" id="loot-item"></p>
+            </div>
         </div>
         <div class="modal-footer" id="close-box" style="display: none">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-button">Close</button>
