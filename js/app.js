@@ -44,6 +44,9 @@ function app() {
     }
 
     $('#lootboxModal').on('hide.bs.modal', function (e) {
+        var crateImg = document.getElementById('crate-img');
+        crateImg.style.backgroundColor = "";
+        crateImg.style.boxShadow = "";
         document.getElementById("close-unbox").style.display = 'none';
         document.getElementById("close-box").style.display = 'none';
         var tierEl = document.getElementById('loot-tier').innerText = "";
@@ -127,12 +130,15 @@ function app() {
                             default:
                                 break;
                         }
+                        var crateImg = document.getElementById('crate-img');
+                        crateImg.style.backgroundColor = tierColor;
+                        crateImg.style.boxShadow = "0 0 " + lootData.tier * 2 + "px " + tierColor;
                         var tierEl = document.getElementById('loot-tier');
                         tierEl.style.color = tierColor;
                         tierEl.innerText = tierName;
                         var itemEl = document.getElementById('loot-item');
                         itemEl.style.color = tierColor;
-                        itemEl.innerText = (lootData.special ? "Special " : "") + lootData.item;
+                        itemEl.innerText = (lootData.special ? '<span style="color: #8650AC">Special</span> ' : '') + lootData.item;
                         document.getElementById('close-box').style.display = "block";
                     });
                 });
