@@ -75,8 +75,8 @@ header {
 }
 
 .big-item {
-    padding-top: 7.5vh;
-    min-height: 20vh;
+    padding-top: 17.5vh;
+    min-height: 40vh;
 }
 
 .slate_background {
@@ -101,6 +101,66 @@ header {
 
 .firey_passion:hover {
     color: #fff !important
+}
+
+.anime_background {
+    background-image: repeating-radial-gradient(rgba(248, 12, 18, 0.2),
+    rgba(238, 17, 0, 0.2),
+    rgba(255, 51, 17, 0.2),
+    rgba(255, 68, 34, 0.2),
+    rgba(255, 102, 68, 0.2),
+    rgba(255, 153, 51, 0.2),
+    rgba(254, 174, 45, 0.2),
+    rgba(204, 187, 51, 0.2),
+    rgba(208, 195, 16, 0.2),
+    rgba(170, 204, 34, 0.2),
+    rgba(105, 208, 37, 0.2),
+    rgba(34, 204, 170, 0.2),
+    rgba(18, 189, 185, 0.2),
+    rgba(17, 170, 187, 0.2),
+    rgba(68, 68, 221, 0.2),
+    rgba(51, 17, 187, 0.2),
+    rgba(59, 12, 189, 0.2),
+    rgba(68, 34, 153, 0.2)), url('../img/anime.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff !important;
+    text-shadow: 0 0 10px #6A1B9A;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.anime_background:hover {
+    color: #fff !important
+}
+
+.anime_background .d-flex {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.anime_text {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 7.5s linear infinite;
+    color: #6A1B9A !important;
+}
+
+@keyframes marquee {
+    0%   { 
+        text-indent: 0em;
+    }
+    100% { 
+        text-indent: -105em;
+    }
+}
+
+.anime_text b {
+    font-weight: 800;
 }
 
 .box-item {
