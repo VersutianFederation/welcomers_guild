@@ -80,6 +80,10 @@ function app() {
         src: ['sound/ambassador_drop.mp3']
     });
 
+    var specialDrop = new Howl({
+        src: ['sound/special_drop.mp3']
+    });
+
     function fillInventory(boxes) {
         var boxData = JSON.parse(boxes);
         content.innerHTML = "";
@@ -108,35 +112,40 @@ function app() {
                             var tierColor;
                             var rewardSound;
                             unboxSound.stop();
+                            var dropSound;
                             switch (lootData.tier) {
                                 case 1:
                                     tierName = "Common";
                                     tierColor = "#B0C3D9";
-                                    commonDrop.play();
+                                    dropSound = commonDrop;
                                     break;
                                 case 2:
                                     tierName = "Uncommon";
                                     tierColor = "#5E98D9";
-                                    uncommonDrop.play();
+                                    dropSound = uncommonDrop;
                                     break;
                                 case 3:
                                     tierName = "Rare";
                                     tierColor = "#4B69FF";
-                                    rareDrop.play();
+                                    dropSound = rareDrop;
                                     break;
                                 case 4:
                                     tierName = "Elite";
                                     tierColor = "#8847FF";
-                                    eliteDrop.play();
+                                    dropSound = eliteDrop;
                                     break;
                                 case 5:
                                     tierName = "Ambassador Select";
                                     tierColor = "#D32CE6";
-                                    ambassadorDrop.play();
+                                    dropSound = ambassadorDrop;
                                     break;
                                 default:
                                     break;
                             }
+                            if (lootData.special) {
+                                dropSound = specialDrop;
+                            }
+                            dropSound.play();
                             var crateImg = document.getElementById('crate-img');
                             crateImg.style.backgroundColor = tierColor;
                             crateImg.style.boxShadow = "0 0 " + lootData.tier * 2 + "px " + tierColor;
