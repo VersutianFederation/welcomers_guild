@@ -51,7 +51,7 @@ function app() {
         document.getElementById("close-box").style.display = 'none';
         var tierEl = document.getElementById('loot-tier').innerText = "";
         var itemEl = document.getElementById('loot-item').innerText = "";
-        request('https://api.versutian.site/boxes?nation=' + nation, function(boxes) {
+        request('https://api.versutian.site//wg/loot/inventory', function(boxes) {
             fillInventory(boxes);
         });
     });
@@ -87,7 +87,7 @@ function app() {
     function fillInventory(boxes) {
         var boxData = JSON.parse(boxes);
         content.innerHTML = "";
-        if (boxData.count === 0) {
+        if (boxData.count < 1) {
             content.innerHTML = '<p class="lead">You do not have any lootboxes.</p>';
         } else {
             var row = document.createElement("div");
@@ -104,7 +104,7 @@ function app() {
                 button.addEventListener('click', function() {
                     $('#lootboxModal').modal('show');
                     unboxSound.play();
-                    request('https://api.versutian.site/loot?nation=' + nation, function(loot) {
+                    request('https://api.versutian.site/wg/loot/roll', function(loot) {
                         unboxSound.once('end', function() {
                             var lootData = JSON.parse(loot);
                             document.getElementById("close-unbox").style.display = 'block';
@@ -175,7 +175,7 @@ function app() {
         if (token) {
             content.innerHTML = '';
             nation = token.payloadObj.user_id;
-            request('https://api.versutian.site/boxes?nation=' + nation, function(boxes) {
+            request('https://api.versutian.site/wg/loot/inventory', function(boxes) {
                 fillInventory(boxes);
             });
         } else {
