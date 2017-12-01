@@ -15,6 +15,7 @@ function app() {
 
     function request(url, callback, xml) {
         var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
         xhr.onload = function() {
             // check if we are on NS API cooldown
             if (url.startsWith('https://www.nationstates.net/cgi-bin/api.cgi?nation=')) {
@@ -35,7 +36,7 @@ function app() {
             // give our callback XML if it requested it
             callback(xml ? xhr.responseXML : xhr.responseText);
         };
-        xhr.open("GET", url);
+        xhr.withCredentials = true;
         xhr.send();
     }
 
