@@ -170,10 +170,8 @@ function app() {
     }
 
     // are we logged in?
-    var token = document.cookie.replace(/(?:(?:^|.*;\s*)__Secure-token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    if (token) {
-        token = KJUR.jws.JWS.parse(token);
-        if (token) {
+    request('https://api.versutian.site/auth/verify', function(verRes) {
+        if (verRes === 1) {
             content.innerHTML = '';
             nation = token.payloadObj.user_id;
             request('https://api.versutian.site/wg/loot/inventory', function(boxes) {
@@ -182,9 +180,7 @@ function app() {
         } else {
             showLoginForm();
         }
-    } else {
-        showLoginForm();
-    }
+    });
 }
 
 // load the app when page has loaded
