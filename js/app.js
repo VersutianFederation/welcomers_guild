@@ -171,9 +171,9 @@ function app() {
 
     // are we logged in?
     request('https://api.versutian.site/auth/verify', function(verRes) {
-        if (verRes == 1) {
+        if (verRes != 0) {
             content.innerHTML = '';
-            nation = token.payloadObj.user_id;
+            nation = verRes.user_id;
             request('https://api.versutian.site/wg/loot/inventory', function(boxes) {
                 fillInventory(boxes);
             });
