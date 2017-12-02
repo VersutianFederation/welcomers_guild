@@ -1,2 +1,2 @@
-# recruitment
-Resources and data for recruitment
+# Welcomers' Guild
+Resources and data for the Welcomers' Guild
