@@ -91,13 +91,13 @@ function app() {
             ratePill.setAttribute('class', 'badge badge-pill');
             var indicator;
             if (info.rate === 0) {
-                ratepill.classList.add('badge-secondary');
+                ratePill.classList.add('badge-secondary');
                 indicator = '+';
             } else if (info.rate > 0) {
-                ratepill.classList.add('badge-success');
+                ratePill.classList.add('badge-success');
                 indicator = '+';
             } else {
-                ratepill.classList.add('badge-danger');
+                ratePill.classList.add('badge-danger');
                 indicator = '-';
             }
             ratePill.innerText = indicator + info.rate;
