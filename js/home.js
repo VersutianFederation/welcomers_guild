@@ -57,8 +57,8 @@ function app() {
             flexDiv.setAttribute('class', 'd-flex w-100 justify-content-between');
             linkCont.appendChild(flexDiv);
             var header = document.createElement('h5');
-            var position = document.createElement('b');
-            position.innerText = position + ".";
+            var positionB = document.createElement('b');
+            positionB.innerText = position + ".";
             header.appendChild(position);
             position++;
             var flag = document.createElement('img');
@@ -68,15 +68,15 @@ function app() {
             header.innerHTML += " " + info.displayName;
             flexDiv.appendChild(header);
             var pointsCont = document.createElement('small');
-            pointsCont.innerHTML = info.livePoints + " <b>WGP</b>";
+            pointsCont.innerHTML = info.livePoints + " <b>WGP</b> ";
             var pill = document.createElement('span');
             pill.setAttribute('class', 'badge badge-pill');
             var indicator;
             if (info.gain === 0) {
-                pill.classList.add('badge-success');
+                pill.classList.add('badge-secondary');
                 indicator = '';
             } else if (info.gain > 0) {
-                pill.classList.add('badge-secondary');
+                pill.classList.add('badge-success');
                 indicator = '+';
             } else {
                 pill.classList.add('badge-danger');
