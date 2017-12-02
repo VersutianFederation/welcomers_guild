@@ -74,7 +74,7 @@ function app() {
             var indicator;
             if (info.gain === 0) {
                 pill.classList.add('badge-secondary');
-                indicator = '';
+                indicator = '+';
             } else if (info.gain > 0) {
                 pill.classList.add('badge-success');
                 indicator = '+';
@@ -87,6 +87,21 @@ function app() {
             hover.innerText = indicator + (info.gain + info.bonus);
             pill.appendChild(hover);
             pointsCont.appendChild(pill);
+            var ratePill = document.createElement('span');
+            ratePill.setAttribute('class', 'badge badge-pill');
+            var indicator;
+            if (info.rate === 0) {
+                ratepill.classList.add('badge-secondary');
+                indicator = '+';
+            } else if (info.rate > 0) {
+                ratepill.classList.add('badge-success');
+                indicator = '+';
+            } else {
+                ratepill.classList.add('badge-danger');
+                indicator = '-';
+            }
+            ratePill.innerText = indicator + info.rate;
+            pointsCont.appendChild(ratePill);
             flexDiv.appendChild(pointsCont);
             leaderboardEl.appendChild(linkCont);
         });
