@@ -46,10 +46,11 @@ function app() {
     request('https://api.versutian.site/wg/points/get', function(data) {
         var leaderboard = JSON.parse(data);
         var leaderboardEl = document.getElementById('leaderboard');
+        leaderboardEl.innerHTML = '';
         var position = 1;
         Object.entries(leaderboard).forEach(function (nation) {
             var name = nation[0];
-            var data = nation[1];
+            var info = nation[1];
             var linkCont = document.createElement('a');
             linkCont.setAttribute('class', 'list-group-item list-group-item-action flex-column align-items-start');
             var flexDiv = document.createElement('div');
@@ -62,19 +63,19 @@ function app() {
             position++;
             var flag = document.createElement('img');
             flag.setAttribute('class', 'img-fluid flag');
-            flag.src = nation.flagImg;
+            flag.src = info.flagImg;
             header.appendChild(flag);
-            header.innerHTML += " " + nation.displayName;
+            header.innerHTML += " " + info.displayName;
             flexDiv.appendChild(header);
             var pointsCont = document.createElement('small');
-            pointsCont.innerHTML = nation.livePoints + " <b>WGP</b>";
+            pointsCont.innerHTML = info.livePoints + " <b>WGP</b>";
             var pill = document.createElement('span');
             pill.setAttribute('class', 'badge badge-pill');
             var indicator;
-            if (nation.gain === 0) {
+            if (info.gain === 0) {
                 pill.classList.add('badge-success');
                 indicator = '';
-            } else if (nation.gain > 0) {
+            } else if (info.gain > 0) {
                 pill.classList.add('badge-secondary');
                 indicator = '+';
             } else {
@@ -82,8 +83,8 @@ function app() {
                 indicator = '-';
             }
             var hover = document.createElement('abbr');
-            hover.title = indicator + nation.gain;
-            hover.innerText = indicator + (nation.gain + nation.bonus);
+            hover.title = indicator + info.gain;
+            hover.innerText = indicator + (info.gain + info.bonus);
             pill.appendChild(hover);
             pointsCont.appendChild(pill);
             flexDiv.appendChild(pointsCont);
