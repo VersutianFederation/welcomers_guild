@@ -58,8 +58,8 @@ function app() {
             linkCont.appendChild(flexDiv);
             var header = document.createElement('h5');
             var positionB = document.createElement('b');
-            positionB.innerText = position + ".";
-            header.appendChild(position);
+            positionB.innerText = position + ". ";
+            header.appendChild(positionB);
             position++;
             var flag = document.createElement('img');
             flag.setAttribute('class', 'img-fluid flag');
