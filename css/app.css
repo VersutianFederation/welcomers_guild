@@ -6,6 +6,19 @@ header {
     color: #fff
 }
 
+.dark-site {
+    background-color: #263238;
+    color: #ECEFF1
+}
+
+.dark-site a {
+    color: #607D8B
+}
+
+.pass-header {
+    line-height: 1; letter-spacing: -.05rem;
+}
+
 .thick {
     font-weight: 600
 }
@@ -16,7 +29,6 @@ header {
 
 .navbar-nav {
     display: inline-block;
-
 }
 
 .brown_background {
@@ -58,7 +70,11 @@ header {
 }
 
 #navbarDropdownMenuLink {
-    color: rgba(0, 0, 0, 1)
+    color: #000
+}
+
+.navbar-dark #navbarDropdownMenuLink {
+    color: #fff
 }
 
 .navbar-brand {
